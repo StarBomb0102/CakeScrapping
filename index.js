@@ -5,7 +5,7 @@ const cron = require("node-cron");
 const { BigQuery } = require("@google-cloud/bigquery");
 
 const datasetId = "CakeLead";
-const tableId = "test_table";
+const tableId = "lead_table";
 
 async function loadJsonToBigQuery() {
   const email = "vishaal.melwani@adquadrant.com";
@@ -149,7 +149,7 @@ async function loadJsonToBigQuery() {
   });
 }
 
-cron.schedule("*/10 * * * * *", function () {
+cron.schedule("5 0 * * *", function () {
   console.log(
     "========================Cron Job==============================="
   );
